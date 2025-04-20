@@ -29,3 +29,6 @@ IndiForge.AI empowers artists, educators, caregivers, and creators of all kinds 
 ### 📌 Status
 
 Currently seeking collaborators in smart contracts (Solana), AI engineering, and ethical data curation. Contributions welcome.
+
+📄 **Full Grant Proposal**  
+[Download the full Solana grant proposal (Word Document)](https://github.com/Cobicobe/indiforge-ai/blob/main/IndiForgeAI_Grant_Proposal_FINAL_with_Budget_and_Founder.docx)
