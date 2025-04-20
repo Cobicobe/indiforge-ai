@@ -1,3 +1,7 @@
+📄 **Full Grant Proposal (Word Document)**  
+[Click here to view or download](https://github.com/Cobicobe/indiforge-ai/blob/main/IndiForgeAI_Grant_Proposal_FINAL_with_Budget_and_Founder.docx)
+
+
 # indiforge-ai
 "Official repo for IndiForge.AI – decentralized, human-first AI licensing platform."
 # IndiForge.AI
