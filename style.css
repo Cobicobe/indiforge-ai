@@ -1,0 +1,105 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndiForge.AI MVP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>IndiForge.AI MVP</h1>
+    <button id="connectWallet" class="btn">Connect Phantom Wallet</button>
+    <p id="walletAddress"></p>
+
+    <div class="upload-section">
+      <input type="file" id="datasetUpload" class="file-input">
+      <p id="fileName"></p>
+      <p id="licenseMsg"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+/* File: script.js */
+document.getElementById('connectWallet').addEventListener('click', async () => {
+  if (window.solana && window.solana.isPhantom) {
+    try {
+      const resp = await window.solana.connect();
+      document.getElementById('walletAddress').innerText = 'Connected: ' + resp.publicKey.toString();
+    } catch (err) {
+      alert('Connection failed!');
+    }
+  } else {
+    alert('Phantom Wallet not found!');
+  }
+});
+
+document.getElementById('datasetUpload').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    document.getElementById('fileName').innerText = 'Uploaded: ' + file.name;
+    document.getElementById('licenseMsg').innerText = 'License generated for dataset: ' + file.name;
+  }
+});
+
+/* File: style.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: #1e1e1e;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 164, 0.2);
+}
+
+h1 {
+  color: #00ffa3;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: linear-gradient(90deg, #00ffa3, #03e1ff);
+  border: none;
+  padding: 12px 24px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.upload-section {
+  margin-top: 30px;
+}
+
+.file-input {
+  padding: 10px;
+  background: #2e2e2e;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+p {
+  margin-top: 15px;
+  color: #ccc;
+}
